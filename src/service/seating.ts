@@ -17,7 +17,7 @@ export class Seating {
       this.passengers = passengers
     }
 
-    generateSeats(_matrix: number[][]): Block[] {
+    generateSeatsDFS(_matrix: number[][]): Block[] {
       // create seats based on block column and row numbers
       const seats: Block[] =  Array.from({length: _matrix.length})
       for (const blockSize of _matrix) {
