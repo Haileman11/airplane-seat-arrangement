@@ -8,7 +8,7 @@ export class Seating {
     middleSeats: Position[];
     seats: Block[];
     passengers: number;
-    _nextSeat = 1
+    _currentSeat = 1
     constructor(matrix : number[][], passengers : number) {
       this.isleSeats = []
       this.windowSeats = []
@@ -72,9 +72,9 @@ export class Seating {
 
     assignSeats(positions: Position[]): void {
       for (const position of positions) {
-        this.seats[position[0]][position[1]][position[2]] = this._nextSeat.toString()
-        if (this._nextSeat < this.passengers) {
-          this._nextSeat++
+        this.seats[position[0]][position[1]][position[2]] = this._currentSeat.toString()
+        if (this._currentSeat < this.passengers) {
+          this._currentSeat++
         } else {
           return
         }
